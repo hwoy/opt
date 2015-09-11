@@ -5,7 +5,7 @@ static int upindex = -1;
 
 int
 opt_action (int argc, const char *argv[], const char *param[], char *buff,
-	    int start)
+	    unsigned int bsize, int start)
 {
   int i, j, k, l;
 
@@ -20,7 +20,8 @@ opt_action (int argc, const char *argv[], const char *param[], char *buff,
 
 	  if (!(strncmp (argv[j], param[i], strlen (param[i]))))
 	    {
-	      for (k = 0, l = strlen (param[i]); argv[j][l]; k++, l++)
+	      for (k = 0, l = strlen (param[i]);
+		   argv[j][l] && (k < bsize - 1); k++, l++)
 		{
 		  buff[k] = argv[j][l];
 		}
@@ -30,7 +31,7 @@ opt_action (int argc, const char *argv[], const char *param[], char *buff,
 	    }
 	}
 
-      for (k = 0, l = 0; argv[j][l]; k++, l++)
+      for (k = 0, l = 0; argv[j][l] && (k < bsize - 1); k++, l++)
 	{
 	  buff[k] = argv[j][l];
 	}

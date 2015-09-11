@@ -6,7 +6,7 @@ enum __opt__
 };
 
 int opt_action (int argc, const char *argv[], const char *param[], char *buff,
-		int start);
+		unsigned int bsize, int start);
 
 int opt_getindex (void);
 

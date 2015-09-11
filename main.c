@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include "opt.h"
 
+#define BSIZE 1024
+
 const char *param[] = { "-a", "-b", "-c", NULL };
 
 int
 main (int argc, const char *argv[])
 {
-  static char buff[1024];
+  static char buff[BSIZE];
   int i;
 
-  while ((i = opt_action (argc, argv, param, buff, DSTART)) != e_optend)
+  while ((i =
+	  opt_action (argc, argv, param, buff, BSIZE, DSTART)) != e_optend)
     {
 
 
