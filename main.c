@@ -9,7 +9,7 @@ main (int argc, const char *argv[])
   static char buff[1024];
   int i;
 
-  while ((i = opt_action (argc, argv, param, buff, 1)) != e_optend)
+  while ((i = opt_action (argc, argv, param, buff, DSTART)) != e_optend)
     {
 
 

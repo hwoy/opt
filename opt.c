@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdio.h>
 #include "opt.h"
 
 static int upindex = -1;
@@ -37,12 +36,12 @@ opt_action (int argc, const char *argv[], const char *param[], char *buff,
 	}
       buff[k] = 0;
       upindex = j + 1;
-      return -1;
+      return e_optother;
 
 
 
     }
-  return -2;
+  return e_optend;
 }
 
 int
