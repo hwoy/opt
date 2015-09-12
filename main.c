@@ -3,16 +3,17 @@
 
 #define BSIZE 1024
 
-const char *param[] = { "-a", "-b", "-c", NULL };
+const char *cptrarr_param[] = { "-a", "-b", "-c", NULL };
 
 int
 main (int argc, const char *argv[])
 {
-  static char buff[BSIZE];
+  static char carray_buff[BSIZE];
   int i;
 
   while ((i =
-	  opt_action (argc, argv, param, buff, BSIZE, DSTART)) != e_optend)
+	  opt_action (argc, argv, cptrarr_param, carray_buff, BSIZE,
+		      DSTART)) != e_optend)
     {
 
 
@@ -21,11 +22,11 @@ main (int argc, const char *argv[])
 	case 0:
 	case 1:
 	case 2:
-	  printf ("%s = %s\n", param[i], buff);
+	  printf ("%s = %s\n", cptrarr_param[i], carray_buff);
 	  break;
 
 	default:
-	  printf ("other = %s\n", buff);
+	  printf ("other = %s\n", carray_buff);
 
 	}
 
