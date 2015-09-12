@@ -46,13 +46,13 @@ opt_action (int argc, const char *argv[], const char *param[], char *buff,
 }
 
 int
-opt_getindex (void)
+opt_getIndex (void)
 {
   return i_upindex;
 }
 
 void
-opt_setindex (int index)
+opt_setIndex (int index)
 {
   i_upindex = index;
 }
