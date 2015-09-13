@@ -10,10 +10,11 @@ main (int argc, const char *argv[])
 {
   static char carray_buff[BSIZE];
   int i;
+  unsigned int ui_pindex;
 
-  while ((i =
-	  opt_action (argc, argv, cptrarr_param, carray_buff, BSIZE,
-		      DSTART)) != e_optend)
+  for (ui_pindex = 1; (i =
+		       opt_action (argc, argv, cptrarr_param, carray_buff,
+				   BSIZE, DSTART)) != e_optend; ui_pindex++)
     {
 
 
@@ -22,11 +23,11 @@ main (int argc, const char *argv[])
 	case 0:
 	case 1:
 	case 2:
-	  printf ("%s = %s\n", cptrarr_param[i], carray_buff);
+	  printf ("%u: %s = %s\n", ui_pindex, cptrarr_param[i], carray_buff);
 	  break;
 
 	default:
-	  printf ("other = %s\n", carray_buff);
+	  printf ("%u: other = %s\n", ui_pindex, carray_buff);
 
 	}
 
