@@ -1,7 +1,7 @@
 #include <string.h>
 #include "opt.h"
 
-static int i_upindex = -1;
+static int i_upindex = DUPINDEX;
 
 int
 opt_action (int argc, const char *argv[], const char *param[], char *buff,
@@ -55,4 +55,10 @@ void
 opt_setIndex (int index)
 {
   i_upindex = index;
+}
+
+void
+opt_resetIndex (void)
+{
+  i_upindex = DUPINDEX;	
 }
