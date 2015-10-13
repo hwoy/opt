@@ -12,7 +12,7 @@ main (int argc, const char *argv[])
   int i;
   unsigned int ui_cindex;
 
-  for (ui_cindex = 1; (i =
+  for (ui_cindex = DSTART; (i =
 		       opt_action (argc, argv, cptrarr_param, carray_buff,
 				   BSIZE, DSTART)) != e_optend; ui_cindex++)
     {
