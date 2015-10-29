@@ -1,4 +1,4 @@
-cc = gcc
+cc = $(CC)
 bin = opt
 CFLAGS =  -O2  -ansi -Wpedantic -Wall -Werror
 
