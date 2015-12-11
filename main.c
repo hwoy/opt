@@ -3,7 +3,7 @@
 
 #define BSIZE 1024
 
-const char *cptrarr_param[] = { "-a", "-b", "-c", NULL };
+const char *cptrarr_param[] = { "-a:", "-b:", "-c", NULL };
 
 int
 main (int argc, const char *argv[])

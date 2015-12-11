@@ -21,8 +21,9 @@ opt_action (int argc, const char *argv[], const char *param[], char *buff,
 	  if (!(strncmp (argv[j], param[i], strlen (param[i]))))
 	    {
 	      for (k = 0, l = strlen (param[i]);
-		   argv[j][l] && (k < bsize - 1); k++, l++)
+		   argv[j][l]; k++, l++)
 		{
+			if(k+1 >= bsize) return e_optoom;
 		  buff[k] = argv[j][l];
 		}
 	      buff[k] = 0;
@@ -31,8 +32,9 @@ opt_action (int argc, const char *argv[], const char *param[], char *buff,
 	    }
 	}
 
-      for (k = 0, l = 0; argv[j][l] && (k < bsize - 1); k++, l++)
+      for (k = 0, l = 0; argv[j][l]; k++, l++)
 	{
+		if(k+1 >= bsize) return e_optoom;
 	  buff[k] = argv[j][l];
 	}
       buff[k] = 0;
