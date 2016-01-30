@@ -1,6 +1,6 @@
 cc = $(CC)
 bin = opt
-CFLAGS =  -O2  -ansi -Wpedantic -Wall -Werror
+CFLAGS =  -O2  -ansi -Wpedantic -Wall -Wextra -Werror
 
 .PHONY: all clean
 

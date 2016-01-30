@@ -7,7 +7,8 @@ int
 opt_action (int argc, const char *argv[], const char *param[], char *buff,
 	    unsigned int bsize, int start)
 {
-  int i, j, k, l;
+  int i, j, l;
+  unsigned int k;
 
   buff[0] = 0;
 
